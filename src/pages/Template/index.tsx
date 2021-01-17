@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './index.css'
+import './index.less'
 import { connect } from 'react-redux'
 import { RootState } from '../../core/reducers'
 import { ThunkDispatch } from 'redux-thunk'
@@ -14,7 +14,7 @@ type PageOwnProps = {}
 type IProps = StateProps & DispatchProps & PageOwnProps
 
 interface State {
-  text: String
+  text: string
 }
 
 class Template extends React.Component<IProps, State> {

@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
+import './index.less'
 import { connect } from 'react-redux'
 import { RootState } from '../../core/reducers'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
-import Header from '../../components/Header'
-import './index.less'
 
 type StateProps = {}
 
@@ -18,22 +17,18 @@ interface State {
   text: string
 }
 
-class Index extends React.Component<IProps, State> {
+class List extends React.Component<IProps, State> {
   constructor(props: IProps) {
     super(props)
 
     this.state = {
-      text: 'Template'
+      text: 'List'
     }
   }
 
   render() {
     const { text } = this.state
-    return <div className="container">
-      <Header />
-      <div className="content">
-      </div>
-    </div>
+    return <div className="container">{ text }</div>
   }
 }
 
@@ -45,4 +40,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, null, AnyAction>)
   return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index)
+export default connect(mapStateToProps, mapDispatchToProps)(List)
