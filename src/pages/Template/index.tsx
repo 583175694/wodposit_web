@@ -17,7 +17,7 @@ interface State {
   text: String
 }
 
-class App extends React.Component<IProps, State> {
+class Template extends React.Component<IProps, State> {
   constructor(props: IProps) {
     super(props)
 
@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, null, AnyAction>)
   return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Template)

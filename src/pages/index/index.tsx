@@ -1,40 +1,46 @@
 import React, {Component} from 'react'
-import logo from '../logo.svg'
-import './App.css'
+import './index.css'
+import { connect } from 'react-redux'
+import { RootState } from '../../core/reducers'
+import { ThunkDispatch } from 'redux-thunk'
+import { AnyAction } from 'redux'
+import { Button } from 'antd'
 
-class App extends Component<any, any> {
+type StateProps = {}
+
+type DispatchProps = {}
+
+type PageOwnProps = {}
+
+type IProps = StateProps & DispatchProps & PageOwnProps
+
+interface State {
+  text: String
+}
+
+class Index extends React.Component<IProps, State> {
+  constructor(props: IProps) {
+    super(props)
+
+    this.state = {
+      text: 'Template'
+    }
+  }
+
   render() {
-    return <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    const { text } = this.state
+    return <div className="container">
+      <Button type="primary">{ text }</Button>
     </div>
   }
 }
 
-
 function mapStateToProps(state: RootState): StateProps {
-  return {
-
-  }
+  return {}
 }
-
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, null, AnyAction>): DispatchProps => {
-  return {
-  }
+  return {}
 }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditInformation)
+export default connect(mapStateToProps, mapDispatchToProps)(Index)
