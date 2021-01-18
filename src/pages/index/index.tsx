@@ -31,8 +31,7 @@ class Index extends React.Component<IProps, State> {
     const { text } = this.state
     return <div className="container">
       <Header />
-      <div className="content">
-      </div>
+
     </div>
   }
 }

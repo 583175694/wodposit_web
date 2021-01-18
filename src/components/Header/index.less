@@ -1,49 +1,109 @@
-
 @import '~antd/dist/antd.css';
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 5rem;
-  padding: 0 10vw;
+  height: .8rem;
+  padding: 0 20vw;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.5s;
   z-index: 1000;
 }
+
 .header, .header_bg {
-  background: #607d8b;
+  background: transparent;
 }
 
-.nav ul
-{
-  margin: 0;
-  padding: 0;
-  display: flex;
+.nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+      list-style: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: #fff;
+        margin: 0 .32rem;
+        font-size: .24rem;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .search {
+        cursor: pointer;
+        width: .25rem;
+        height: .25rem;
+        background-image: url("../../assets/icon_search.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: .24rem;
+      }
+    }
+  }
 }
 
-.nav ul li
-{
-  list-style: none;
-}
-
-.nav ul li a
-{
+.brand a {
   color: #fff;
-  padding: 0 20px;
-  font-size: 1.1em;
+  font-size: .24rem;
   text-decoration: none;
   font-weight: bold;
 }
 
-.brand a
-{
-  color: #fff;
-  font-size: 1.1em;
-  text-decoration: none;
-  font-weight: bold;
+.menu-dropdown {
+  .ant-dropdown-arrow {
+    border-top-color: #000000;
+    border-left-color: #000000;
+    opacity: 0.6;
+    left: .48rem;
+  }
+  ul {
+    background: rgba(0, 0, 0, 0.6);
+    .ant-dropdown-menu-item:hover,
+    .ant-dropdown-menu-submenu-title:hover {
+      background: rgba(0, 0, 0, 0.1);
+
+      a {
+        color: #1682FF;
+      }
+    }
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      a {
+        color: #fff;
+        padding: .28rem .9rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        font-size: .24rem;
+      }
+    }
+  }
+}
+
+.search-dropdown {
+  .ant-dropdown-arrow {
+  }
+  .ant-dropdown-menu {
+
+  }
+  .search-input {
+    width: 7.56rem;
+    height: .8rem;
+    background-color: #fff;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding-left: .32rem;
+    font-size: .22rem;
+    color: #333;
+  }
 }

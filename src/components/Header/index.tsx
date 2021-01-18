@@ -1,23 +1,75 @@
 import React from 'react'
 import './index.less'
-import { Link, Route } from 'react-router-dom'
-import { Layout } from 'antd'
+import {Link, Route, BrowserRouter} from 'react-router-dom'
+import {Layout, Menu, Dropdown, Input} from 'antd'
 import Product from '../Product'
 import New from '../New'
 import List from '../List'
 import About from '../About'
 import Home from '../Home'
 
-const { Content } = Layout
+type StateProps = {}
 
-class Header extends React.Component {
-  componentDidMount() {}
+type DispatchProps = {}
+
+type PageOwnProps = {}
+
+type IProps = StateProps & DispatchProps & PageOwnProps
+
+interface State {
+  visible: boolean
+}
+
+class Header extends React.Component<IProps, State> {
+  constructor(props: IProps) {
+    super(props)
+
+    this.state = {
+      visible: false
+    }
+  }
+
+  handleVisibleChange = (flag: boolean) => {
+    this.setState({ visible: flag });
+  };
 
   render() {
+    const menu = (
+      <Menu>
+        <Menu.Item>
+          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+            台式机内存
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+            笔记本内存
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+            服务器内存
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+            SSD固态硬盘
+          </a>
+        </Menu.Item>
+      </Menu>
+    );
+
+    const search = (
+      <Input
+        className="search-input"
+        placeholder="请输入搜索内容，如产品名称/编号"
+      />
+    )
+
     return (
-      <div className="page" id="page">
+      <div className="page">
         <Layout>
-          <div className="header" id="header"> //导航栏div
+          <div className="header">
             <div className="brand">
               <Link to="/">
                 111
@@ -26,36 +78,42 @@ class Header extends React.Component {
             <div className="nav">
               <ul>
                 <li>
-                  <Link to="/technology">
-                    核心技术
-                  </Link>
+                  <Dropdown overlayClassName="menu-dropdown" overlay={menu} placement="bottomLeft" arrow>
+                    <Link to="/product" >产品中心</Link>
+                  </Dropdown>
                 </li>
                 <li>
-                  <Link to="/case">
-                    行业案例
-                  </Link>
+                  <Link to="/new">新闻中心</Link>
                 </li>
                 <li>
-                  <Link to="/about">
-                    关于DUCK
-                  </Link>
+                  <Link to="/list">技术测评</Link>
                 </li>
                 <li>
-                  <Link to="/join">
-                    加入我们
-                  </Link>
+                  <Link to="/about">关于我们</Link>
+                </li>
+                <li>
+                  <Dropdown
+                    overlayClassName="search-dropdown"
+                    overlay={search}
+                    placement="bottomRight"
+                    arrow
+                    onVisibleChange={this.handleVisibleChange}
+                    visible={this.state.visible}
+                  >
+                    <div className="search"></div>
+                  </Dropdown>
                 </li>
               </ul>
             </div>
           </div>
 
-          <Content className="content" id="content">
-            <Route path="/" exact component={ Home }/>
-            <Route path="/product" exact component={ Product }/>
-            <Route path="/new" component={ New }/>
-            <Route path="/list" component={ List }/>
-            <Route path="/about" component={ About }/>
-          </Content>
+          <BrowserRouter>
+            <Route path="/" exact component={Home}/>
+            <Route path="/product" component={Product}/>
+            <Route path="/new" component={New}/>
+            <Route path="/list" component={List}/>
+            <Route path="/about" component={About}/>
+          </BrowserRouter>
         </Layout>
       </div>
     )
