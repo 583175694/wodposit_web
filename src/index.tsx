@@ -4,7 +4,7 @@ import './index.less'
 import App from './pages/index'
 import { Provider } from 'react-redux'
 import configStore from './core/store/index'
-import { HashRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
 
 const store = configStore()
 

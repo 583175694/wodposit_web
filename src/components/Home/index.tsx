@@ -18,6 +18,7 @@ type IProps = StateProps & DispatchProps & PageOwnProps
 
 interface State {
   banner: Array<Banner>
+  products: Array<any>
 }
 
 interface Banner {
@@ -37,6 +38,22 @@ class Home extends React.Component<IProps, State> {
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg'
       }, {
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg'
+      }],
+      products: [{
+        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
+        title: 'ECC/REG/服务器',
+        subtitle: 'ECC/REG/服务器',
+        to: ''
+      }, {
+        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
+        title: 'SSD',
+        subtitle: '嵌入式解决方案',
+        to: ''
+      }, {
+        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
+        title: '宽温/工业级',
+        subtitle: '系统稳定性高',
+        to: ''
       }]
     }
   }
@@ -55,17 +72,15 @@ class Home extends React.Component<IProps, State> {
   }
 
   render() {
-    const { banner } = this.state
-    return <div className="container">
+    const { banner, products } = this.state
+    return <div className="home-container">
       {/* Banner */}
       <div className='swiper-container'>
         <div className='swiper-wrapper'>
           { banner.map((res, key) => {
             return (
               <div className='swiper-slide' key={key}>
-                <Image
-                  src={res.url}
-                />
+                <Image src={res.url}  preview={false} />
               </div>
             )
           })}
@@ -82,7 +97,7 @@ class Home extends React.Component<IProps, State> {
           <p>Limited life Endless storage</p>
         </div>
         <div className="product-image">
-          <Image src="https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg" />
+          <Image src="https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg" preview={false} />
         </div>
         <div className="describe-en">
           <p>MAKE SOMETHING DIFFERENT</p>
@@ -101,7 +116,21 @@ class Home extends React.Component<IProps, State> {
 
       {/* 产品 */}
       <div className="product">
-        
+        { products.map((res, index) => {
+          return (
+            <div className="product-item" key={index}>
+              <Image src={res.url} preview={false}/>
+              <div className="product-content">
+                <p className="title">{ res.title }</p>
+                <p className="subtitle">{ res.subtitle }</p>
+                <div className="detail-button">
+                  <p>查看详情</p>
+                  <div className="icon-right"></div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   }

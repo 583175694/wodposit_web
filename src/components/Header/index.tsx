@@ -106,14 +106,6 @@ class Header extends React.Component<IProps, State> {
               </ul>
             </div>
           </div>
-
-          <BrowserRouter>
-            <Route path="/" exact component={Home}/>
-            <Route path="/product" component={Product}/>
-            <Route path="/new" component={New}/>
-            <Route path="/list" component={List}/>
-            <Route path="/about" component={About}/>
-          </BrowserRouter>
         </Layout>
       </div>
     )
