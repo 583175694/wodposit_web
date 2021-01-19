@@ -1,12 +1,7 @@
 import React from 'react'
 import './index.less'
-import {Link, Route, BrowserRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {Layout, Menu, Dropdown, Input} from 'antd'
-import Product from '../Product'
-import New from '../New'
-import List from '../List'
-import About from '../About'
-import Home from '../Home'
 
 type StateProps = {}
 

@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './index.less'
 import { connect } from 'react-redux'
 import { RootState } from '../../core/reducers'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
-import {Image} from "antd";
+import { Image } from "antd"
+import {Link} from 'react-router-dom'
 
 type StateProps = {}
 
@@ -16,7 +17,27 @@ type IProps = StateProps & DispatchProps & PageOwnProps
 
 interface State {
   products: Array<any>
+  data: Array<any>
+  initLoading: boolean
+  loading: boolean
 }
+
+const newData = [{
+  id: 1,
+  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
+  title: 'ECC/REG/服务器',
+  subtitle: 'ECC/REG/服务器',
+}, {
+  id: 2,
+  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
+  title: 'SSD',
+  subtitle: '嵌入式解决方案',
+}, {
+  id: 3,
+  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
+  title: '宽温/工业级',
+  subtitle: '系统稳定性高',
+}]
 
 class Product extends React.Component<IProps, State> {
   constructor(props: IProps) {
@@ -24,43 +45,60 @@ class Product extends React.Component<IProps, State> {
 
     this.state = {
       products: [{
+        id: 1,
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
         title: 'ECC/REG/服务器',
         subtitle: 'ECC/REG/服务器',
         to: ''
       }, {
+        id: 2,
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
         title: 'SSD',
         subtitle: '嵌入式解决方案',
         to: ''
       }, {
+        id: 3,
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
         title: '宽温/工业级',
         subtitle: '系统稳定性高',
         to: ''
-      }, {
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
-        title: 'ECC/REG/服务器',
-        subtitle: 'ECC/REG/服务器',
-        to: ''
-      }, {
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
-        title: 'SSD',
-        subtitle: '嵌入式解决方案',
-        to: ''
-      }, {
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
-        title: '宽温/工业级',
-        subtitle: '系统稳定性高',
-        to: ''
-      }]
+      }],
+      data: [],
+      initLoading: true,
+      loading: false,
     }
   }
 
+  componentDidMount() {
+    this.setState({
+      initLoading: false,
+      data: this.state.products
+    })
+  }
+
+  onLoadMore = () => {
+    this.setState({
+      loading: true,
+      products: this.state.products.concat([...new Array(3)].map(() => ({ loading: true, name: {} }))),
+    })
+    const data = this.state.data.concat(newData)
+    this.setState({
+        data,
+        products: data,
+        loading: false,
+      }, () => {
+        window.dispatchEvent(new Event('resize'))
+      },
+    )
+  }
+
   render() {
-    const { products } = this.state
+    const { initLoading, loading, products } = this.state
+
     return <div className="product-container">
-      <div className="banner"/>
+      <div className="banner">
+        <div className="mask"></div>
+      </div>
       {/* 产品 */}
       <div className="introduce">
         <p>台式机内存</p>
@@ -69,8 +107,8 @@ class Product extends React.Component<IProps, State> {
       <div className="product">
         { products.map((res, index) => {
           return (
-            <div className="product-flex">
-              <div className="product-item" key={index}>
+            <div className="product-flex" key={index}>
+              <div className="product-item">
                 <Image src={res.url} preview={false}/>
                 <div className="product-content">
                   <p className="title">{res.title}</p>
@@ -80,7 +118,7 @@ class Product extends React.Component<IProps, State> {
                       <p>规格表PDF</p>
                     </div>
                     <div className="detail-button">
-                      <p>查看详情</p>
+                      <Link to={`/product/${res.id}`}><p>查看详情</p></Link>
                     </div>
                   </div>
                 </div>
@@ -88,6 +126,11 @@ class Product extends React.Component<IProps, State> {
             </div>
           )
         })}
+        { !initLoading && !loading && (
+          <div className="load-more" onClick={this.onLoadMore}>
+            <p>加载更多</p>
+          </div>
+        )}
       </div>
     </div>
   }

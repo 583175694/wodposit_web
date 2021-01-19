@@ -17,18 +17,20 @@ interface State {
   describe: string
 }
 
-class List extends React.Component<IProps, State> {
+class ProductDetail extends React.Component<IProps, State> {
   constructor(props: IProps) {
     super(props)
 
     this.state = {
-      describe: 'List'
+      describe: 'Template'
     }
   }
 
   render() {
     const { describe } = this.state
-    return <div className="container">{ describe }</div>
+    return <div className="productDetail-container">
+      <div className="banner"></div>
+    </div>
   }
 }
 
@@ -40,4 +42,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<RootState, null, AnyAction>)
   return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(List)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail)

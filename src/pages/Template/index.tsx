@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './index.less'
 import { connect } from 'react-redux'
 import { RootState } from '../../core/reducers'
@@ -14,7 +14,7 @@ type PageOwnProps = {}
 type IProps = StateProps & DispatchProps & PageOwnProps
 
 interface State {
-  text: string
+  describe: string
 }
 
 class Template extends React.Component<IProps, State> {
@@ -22,13 +22,13 @@ class Template extends React.Component<IProps, State> {
     super(props)
 
     this.state = {
-      text: 'Template'
+      describe: 'Template'
     }
   }
 
   render() {
-    const { text } = this.state
-    return <div className="container">{ text }</div>
+    const { describe } = this.state
+    return <div className="container">{ describe }</div>
   }
 }
 

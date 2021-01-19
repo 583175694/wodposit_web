@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Swiper, { Autoplay } from 'swiper'
 import 'swiper/swiper.less'
 import './index.less'

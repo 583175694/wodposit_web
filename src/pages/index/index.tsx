@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {RootState} from '../../core/reducers'
 import {ThunkDispatch} from 'redux-thunk'
@@ -12,6 +12,7 @@ import Product from "../../components/Product";
 import New from "../../components/New";
 import List from "../../components/List";
 import About from "../../components/About";
+import ProductDetail from "../../components/ProductDetail";
 
 type StateProps = {}
 
@@ -21,29 +22,27 @@ type PageOwnProps = {}
 
 type IProps = StateProps & DispatchProps & PageOwnProps
 
-interface State {
-  text: string
-}
+interface State {}
 
 class Index extends React.Component<IProps, State> {
   constructor(props: IProps) {
     super(props)
 
     this.state = {
-      text: 'Template'
+      describe: 'Template'
     }
   }
 
   render() {
-    const {text} = this.state
     return <div className="index">
       <BrowserRouter>
         <Header/>
         <Route path="/" exact component={Home}/>
         <Route path="/product" exact component={Product}/>
-        <Route path="/new" exact component={New}/>
-        <Route path="/list" exact component={List}/>
-        <Route path="/about" exact component={About}/>
+        <Route path="/product/:id" component={ProductDetail}/>
+        <Route path="/new" component={New}/>
+        <Route path="/list" component={List}/>
+        <Route path="/about" component={About}/>
         <Footer/>
       </BrowserRouter>
     </div>

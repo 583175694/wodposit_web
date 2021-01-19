@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './index.less'
 import { connect } from 'react-redux'
 import { RootState } from '../../core/reducers'

@@ -18,9 +18,10 @@
     padding-bottom: 0.64rem;
 
     p {
+      font-family: PingFangSC-Semibold, PingFang SC, serif;
+
       &:first-of-type {
         font-size: 0.4rem;
-        font-family: PingFangSC-Semibold, PingFang SC;
         font-weight: 600;
         color: #4A4A4A;
         line-height: 0.56rem;
@@ -29,7 +30,6 @@
 
       &:last-of-type {
         font-size: 0.3rem;
-        font-family: PingFangSC-Semibold, PingFang SC;
         font-weight: 600;
         color: #4A4A4A;
         line-height: 0.42rem;
@@ -45,7 +45,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 0 3.8rem 3.15rem;
+    padding: 0 3.8rem 2.8rem;
 
     .product-flex {
       flex: 0 0 33%;
@@ -58,6 +58,7 @@
       border-radius: 8px;
       overflow: hidden;
       margin: 0 auto .4rem;
+      box-shadow: 0px 8px 20px 0px rgba(75, 34, 34, 0.1);
 
       img {
         width: 3.6rem;
@@ -90,12 +91,32 @@
         }
       }
     }
+
+    .load-more {
+      cursor: pointer;
+      width: 1.28rem;
+      height: 0.52rem;
+      background: linear-gradient(135deg, #4B9EFF 0%, #2CECFB 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-size: .2rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #FFFFFF;
+        line-height: .52rem;
+      }
+    }
   }
 
 
   .button {
     display: flex;
     align-items: center;
+
     .pdf-button {
       cursor: pointer;
       width: 1.28rem;
@@ -121,7 +142,6 @@
 
     p {
       font-size: .2rem;
-      font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #FFFFFF;
       line-height: .52rem;
@@ -129,4 +149,7 @@
 
   }
 
+  p {
+    font-family: PingFangSC-Medium, PingFang SC;
+  }
 }

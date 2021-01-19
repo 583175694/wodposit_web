@@ -1,0 +1,127 @@
+.about-container {
+  .banner {
+    position: relative;
+    width: 100vw;
+    height: 6.4rem;
+    background-image: url("../../assets/banner-1.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .mask {
+      @flex-column();
+
+      p {
+        &:first-child {
+          font-size: 0.56rem;
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 0.78rem;
+          margin-top: 3.2rem;
+        }
+
+        &:last-child {
+          font-size: 0.28rem;
+          font-weight: 500;
+          color: #FFFFFF;
+          line-height: 0.4rem;
+        }
+      }
+    }
+  }
+
+  .about {
+    width: 100vw;
+    height: 12rem;
+    background: #0C0C18;
+    padding: .96rem 4.8rem 0;
+
+    .title {
+      @flex-row();
+      margin-bottom: 0.32rem;
+
+      p {
+        color: #FFFFFF;
+
+        &:first-child {
+          font-size: 0.4rem;
+          font-weight: 600;
+          line-height: 0.56rem;
+          margin-right: .16rem;
+        }
+
+        &:last-child {
+          font-size: 0.3rem;
+          font-weight: 600;
+          line-height: 0.42rem;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      .describe-zh {
+        p {
+          width: 4.6rem;
+          font-size: 0.2rem;
+          font-weight: 500;
+          color: #FFFFFF;
+          line-height: 0.32rem;
+          text-align: justify;
+          margin-bottom: .4rem;
+        }
+
+        margin-right: 0.4rem;
+      }
+
+      .describe-en {
+        p {
+          width: 4.6rem;
+          font-size: 0.18rem;
+          font-weight: 500;
+          color: #FFFFFF;
+          line-height: 0.32rem;
+          text-align: justify;
+          margin-bottom: .4rem;
+        }
+      }
+    }
+
+    .contact {
+      .contact-item {
+        margin-bottom: .24rem;
+        div {
+          @flex-row();
+        }
+        p {
+          font-size: 0.2rem;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #FFFFFF;
+          line-height: 0.32rem;
+
+          &:first-child {
+            display: inline-block;
+            width: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@flex-column: {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+@flex-row: {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
