@@ -8,6 +8,10 @@ import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
 import { Image } from 'antd'
 
+import banner1 from '../../assets/home_banner.png'
+import banner2 from '../../assets/about_banner.png'
+import banner3 from '../../assets/product_banner.png'
+
 type StateProps = {}
 
 type DispatchProps = {}
@@ -33,11 +37,11 @@ class Home extends React.Component<IProps, State> {
 
     this.state = {
       banner: [{
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg'
+        url: banner1
       }, {
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg'
+        url: banner2
       }, {
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg'
+        url: banner3
       }],
       products: [{
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
@@ -87,7 +91,14 @@ class Home extends React.Component<IProps, State> {
         </div>
         {/* 分页器结构 */}
         <div className='swiper-pagination' />
-        <div className="mask" />
+        <div className="mask">
+          <p className="banner-title">生活多姿多彩  科技无处不在</p>
+          <p className="banner-subtitle">Colorful life technology is everywhere</p>
+          <div className="detail-button">
+            <p>了解更多</p>
+            <div className="icon-right"></div>
+          </div>
+        </div>
       </div>
 
       {/* 描述 */}

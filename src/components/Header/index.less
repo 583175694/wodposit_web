@@ -30,6 +30,45 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: .26rem;
+        bottom: -0.25rem;
+        width: 1.12rem;
+        height: 0.03rem;
+        background: #FFFFFF;
+        border-radius: 2px;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        content: '';
+        position: absolute;
+        left: .26rem;
+        bottom: -0.25rem;
+        width: 1.12rem;
+        height: 0.03rem;
+        background: #FFFFFF;
+        border-radius: 2px;
+        transition: all 1.2s ease;
+        opacity: 1;
+      }
+
+      &:last-of-type {
+        &::after {
+          content: '';
+          display: none;
+        }
+
+        &:hover::after {
+          content: '';
+          display: none;
+        }
+
+      }
 
       a {
         color: #fff;
@@ -66,8 +105,10 @@
     opacity: 0.6;
     left: .48rem;
   }
+
   ul {
     background: rgba(0, 0, 0, 0.6);
+
     .ant-dropdown-menu-item:hover,
     .ant-dropdown-menu-submenu-title:hover {
       background: rgba(0, 0, 0, 0.1);
@@ -76,6 +117,7 @@
         color: #1682FF;
       }
     }
+
     .ant-dropdown-menu-item,
     .ant-dropdown-menu-submenu-title {
       a {
@@ -92,9 +134,11 @@
 .search-dropdown {
   .ant-dropdown-arrow {
   }
+
   .ant-dropdown-menu {
 
   }
+
   .search-input {
     width: 7.56rem;
     height: .8rem;

@@ -32,22 +32,22 @@ class Header extends React.Component<IProps, State> {
     const menu = (
       <Menu>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+          <a target="_blank" href="http://www.alipay.com/">
             台式机内存
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+          <a target="_blank" href="http://www.taobao.com/">
             笔记本内存
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+          <a target="_blank" href="http://www.tmall.com/">
             服务器内存
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+          <a target="_blank" href="http://www.tmall.com/">
             SSD固态硬盘
           </a>
         </Menu.Item>
@@ -74,7 +74,7 @@ class Header extends React.Component<IProps, State> {
               <ul>
                 <li>
                   <Dropdown overlayClassName="menu-dropdown" overlay={menu} placement="bottomLeft" arrow>
-                    <Link to="/product" >产品中心</Link>
+                    <Link to="/product">产品中心</Link>
                   </Dropdown>
                 </li>
                 <li>

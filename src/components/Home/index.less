@@ -7,14 +7,37 @@
     .ant-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .mask {
+    @flex-column();
+
+    .banner-title {
+      font-size: 0.56rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 0.78rem;
+      margin-top: 4.1rem;
+    }
+
+    .banner-subtitle {
+      font-size: 0.28rem;
+      font-weight: 500;
+      color: #FFFFFF;
+      line-height: 0.4rem;
+      margin-bottom: 0.68rem;
     }
   }
 }
 
 .home-container {
-
-
   .describe {
     position: relative;
     background-color: #0C0C18;
@@ -120,6 +143,12 @@
       border-radius: 8px;
       overflow: hidden;
       margin: 0 0.2rem;
+      transform: translateY(0);
+      transition: all .2s ease;
+
+      &:hover {
+        transform: translateY(-0.1rem);
+      }
 
       img {
         width: 3.6rem;
@@ -162,6 +191,7 @@
     align-items: center;
 
     p {
+      cursor: pointer;
       font-size: .2rem !important;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
@@ -181,4 +211,17 @@
     }
   }
 
+}
+
+@flex-column: {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+@flex-row: {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
