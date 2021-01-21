@@ -11,6 +11,7 @@ import { Image } from 'antd'
 import banner1 from '../../assets/home_banner.png'
 import banner2 from '../../assets/about_banner.png'
 import banner3 from '../../assets/product_banner.png'
+import {Link} from "react-router-dom";
 
 type StateProps = {}
 
@@ -47,17 +48,17 @@ class Home extends React.Component<IProps, State> {
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
         title: 'ECC/REG/服务器',
         subtitle: 'ECC/REG/服务器',
-        to: ''
+        id: '1'
       }, {
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
         title: 'SSD',
         subtitle: '嵌入式解决方案',
-        to: ''
+        id: '2'
       }, {
         url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
         title: '宽温/工业级',
         subtitle: '系统稳定性高',
-        to: ''
+        id: '3'
       }]
     }
   }
@@ -130,14 +131,18 @@ class Home extends React.Component<IProps, State> {
         { products.map((res, index) => {
           return (
             <div className="product-item" key={index}>
-              <Image src={res.url} preview={false}/>
+              <div className="product-img">
+                <Image src={res.url} preview={false}/>
+              </div>
               <div className="product-content">
                 <p className="title">{ res.title }</p>
                 <p className="subtitle">{ res.subtitle }</p>
-                <div className="detail-button">
-                  <p>查看详情</p>
-                  <div className="icon-right"></div>
-                </div>
+                <Link to={`/product/${res.id}`}>
+                  <div className="detail-button">
+                    <p>查看详情</p>
+                    <div className="icon-right"></div>
+                  </div>
+                </Link>
               </div>
             </div>
           )

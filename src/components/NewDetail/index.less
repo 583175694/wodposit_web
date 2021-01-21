@@ -1,0 +1,107 @@
+.newDetail-container {
+  .banner {
+    position: relative;
+    width: 100vw;
+    height: 6.4rem;
+    background-image: url("../../assets/news_banner.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .new {
+    width: 100vw;
+    background: #FFFFFF;
+    padding: 0.96rem 4.8rem 2.32rem;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 0.64rem;
+
+      p {
+        color: #000;
+
+        &:first-child {
+          font-size: 0.4rem;
+          font-weight: 600;
+          line-height: 0.56rem;
+          margin-right: .16rem;
+        }
+
+        &:last-child {
+          font-size: 0.3rem;
+          font-weight: 600;
+          line-height: 0.42rem;
+        }
+      }
+    }
+
+    .new-desc {
+      p {
+        font-size: 0.2rem;
+        font-weight: 500;
+        color: #000000;
+        line-height: 0.32rem;
+      }
+    }
+
+    .assets {
+      margin: 0.64rem 0;
+      @flex-row();
+
+      .assets-item {
+        width: 2.6rem;
+        height: 3.6rem;
+        margin-right: .9rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      .assets-1 {
+        background: url("../../assets/assets_about1.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .assets-2 {
+        background: url("../../assets/assets_about2.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .assets-3 {
+        background: url("../../assets/assets_about3.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .assets-4 {
+        background: url("../../assets/assets_about4.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .assets-5 {
+        background: url("../../assets/assets_about5.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .assets-6 {
+        background: url("../../assets/assets_about6.png") no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+@flex-column: {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@flex-row: {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

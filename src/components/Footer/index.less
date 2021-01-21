@@ -22,48 +22,75 @@
     }
   }
 
-  .detail {
-    margin-left: 3.8rem;
-    margin-top: 0.91rem;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.71rem;
 
-    p {
-      font-size: 0.23rem;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #2886F3;
-      line-height: 0.32rem;
-      margin-bottom: .15rem;
-    }
+    .detail {
+      margin-left: 3.8rem;
 
-    .detail-input {
-      display: flex;
-      align-items: center;
-
-      input {
-        width: 2.88rem;
-        height: 0.49rem;
-        border-radius: 4px 0px 0px 4px;
-        border: 2px solid #4A4A4A;
-        background: transparent;
-      }
-
-      .confirm-button {
-        cursor: pointer;
-        width: 1.28rem;
-        height: 0.49rem;
-        background: linear-gradient(135deg, #4B9EFF 0%, #2CECFB 100%);
-        border-radius: 0px 4px 4px 0px;
-        margin-left: -0.04rem;
-        z-index: 9;
+      p {
         font-size: 0.23rem;
         font-family: PingFangSC-Regular, PingFang SC;
-        color: #FFFFFF;
+        font-weight: 400;
+        color: #2886F3;
+        line-height: 0.32rem;
+        margin-bottom: .15rem;
+      }
+
+      .detail-input {
         display: flex;
         align-items: center;
-        justify-content: center;
+
+        input {
+          width: 2.88rem;
+          height: 0.49rem;
+          border-radius: 4px 0px 0px 4px;
+          border: 2px solid #4A4A4A;
+          background: transparent;
+        }
+
+        .confirm-button {
+          cursor: pointer;
+          width: 1.28rem;
+          height: 0.49rem;
+          background: linear-gradient(135deg, #4B9EFF 0%, #2CECFB 100%);
+          border-radius: 0px 4px 4px 0px;
+          margin-left: -0.04rem;
+          z-index: 9;
+          font-size: 0.23rem;
+          font-family: PingFangSC-Regular, PingFang SC;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
+
+    .icon-logo {
+      width: 1.99rem;
+      height: 1.05rem;
+      background-image: url("../../assets/logo.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: .6rem;
+    }
+
+    .icon-qrcode {
+      width: 1.28rem;
+      height: 1.28rem;
+      background-image: url("../../assets/qrcode.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 3.55rem;
+    }
   }
+
 
   .icp {
     position: absolute;

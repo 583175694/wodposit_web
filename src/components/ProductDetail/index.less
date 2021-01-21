@@ -3,7 +3,7 @@
     position: relative;
     width: 100vw;
     height: 6.4rem;
-    background-image: url("../../assets/memory-banner.jpg");
+    background-image: url("../../assets/memory-banner.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,9 +11,8 @@
 
   .content {
     width: 100vw;
-    height: 19.75rem;
     background: #FFFFFF;
-    padding: .48rem 4.8rem 1.51rem;
+    padding: .48rem 4.8rem 1rem;
 
     .title {
       font-size: 0.42rem;
@@ -24,11 +23,181 @@
       text-align: center;
       margin-bottom: .48rem;
     }
+
     .describe {
       white-space: pre-wrap;
       font-size: 0.2rem;
       color: #4A4A4A;
       line-height: 0.28rem;
+    }
+  }
+
+  .product {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0.72rem;
+    margin-bottom: 0.72rem;
+
+    .figure {
+      margin-right: 0.48rem;
+
+      .figure-l {
+        width: 4.6rem;
+        height: 4.6rem;
+        background: #D8D8D8;
+        border: 1px solid #D8D8D8;
+        object-fit: contain;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 0.12rem;
+
+        li {
+          width: 1.3rem;
+          height: 1.3rem;
+          margin-right: 0.35rem;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          .figure-s {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .2s ease;
+            border: 1px solid #FFF;
+          }
+
+          .active {
+            border: 1px solid #D8D8D8;
+          }
+        }
+
+      }
+    }
+
+    .param {
+      margin-top: 0.32rem;
+
+      h2 {
+        font-size: 0.32rem;
+        font-weight: 600;
+        color: #4A4A4A;
+        line-height: 0.45rem;
+        margin-bottom: 0.24rem;
+      }
+
+      ul {
+        margin-bottom: 0.67rem;
+
+        li {
+          font-size: 0.2rem;
+          color: #4A4A4A;
+          line-height: 0.48rem;
+        }
+      }
+    }
+
+    table {
+      width: 9.6rem;
+      font-size: 0.2rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #4A4A4A;
+      line-height: 0.64rem;
+
+      .ant-table-thead {
+        .ant-table-cell {
+          background: #EEEEEE;
+        }
+      }
+
+      .ant-table-row {
+        &:nth-child(2n) {
+          background: #EEEEEE;
+        }
+      }
+
+      .ant-table-cell {
+        padding-left: 0.3rem;
+      }
+    }
+  }
+
+  .recommend {
+    width: 100vw;
+    height: 5.36rem;
+    background: #F8F8F8;
+    padding-left: 4.8rem;
+
+    h5 {
+      font-size: 0.2rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #4A4A4A;
+      line-height: 0.28rem;
+      padding-top: 0.48rem;
+      padding-bottom: 0.32rem;
+    }
+
+    .more {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+
+      .recommend-item {
+        width: 3.6rem;
+        height: 3.8rem;
+        background: #FFFFFF;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-right: 0.4rem;
+        transform: translateY(0);
+        transition: all .2s ease;
+
+        &:last-of-type {
+          margin-right: 0rem;
+        }
+
+        &:hover {
+          transform: translateY(-0.1rem);
+        }
+
+        img {
+          width: 3.6rem;
+          height: 1.79rem;
+          object-fit: cover;
+        }
+
+        .recommend-content {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          .title {
+            font-size: 0.22rem;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #4A4A4A;
+            line-height: 0.32rem;
+          }
+
+          .subtitle {
+            font-size: 0.18rem;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #9B9B9B;
+            line-height: 0.32rem;
+            margin-bottom: 0.26rem;
+          }
+        }
+      }
     }
   }
 }

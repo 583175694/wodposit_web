@@ -34,12 +34,16 @@ class Footer extends React.Component<IProps, State> {
         <li>技术测评</li>
         <li>关于我们</li>
       </ul>
-      <div className="detail">
-        <p>输入邮箱获取最新价格和优惠！</p>
-        <div className="detail-input">
-          <Input/>
-          <div className="confirm-button">提交</div>
+      <div className="content">
+        <div className="detail">
+          <p>输入邮箱获取最新价格和优惠！</p>
+          <div className="detail-input">
+            <Input/>
+            <div className="confirm-button">提交</div>
+          </div>
         </div>
+        <div className="icon-qrcode"></div>
+        <div className="icon-logo"></div>
       </div>
       <div className="icp">
         <p>© 2019 深圳市沃存科技有限公司</p>

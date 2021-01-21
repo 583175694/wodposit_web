@@ -148,12 +148,24 @@
 
       &:hover {
         transform: translateY(-0.1rem);
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      .product-img {
+        width: 3.6rem;
+        height: 1.79rem;
+        overflow: hidden;
+        margin-bottom: .1rem;
       }
 
       img {
         width: 3.6rem;
         height: 1.79rem;
         object-fit: cover;
+        transform: scale(1);
+        transition: all .2s ease;
       }
 
       .product-content {
@@ -180,37 +192,6 @@
       }
     }
   }
-
-  .detail-button {
-    cursor: pointer;
-    width: 1.60rem;
-    height: .52rem;
-    background: linear-gradient(135deg, #4B9EFF 0%, #2CECFB 100%);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-
-    p {
-      cursor: pointer;
-      font-size: .2rem !important;
-      font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
-      color: #FFFFFF;
-      line-height: .52rem;
-      margin-left: .18rem;
-      margin-right: .1rem;
-    }
-
-    .icon-right {
-      width: .34rem;
-      height: .16rem;
-      background-image: url("../../assets/icon_right.png");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
-
 }
 
 @flex-column: {

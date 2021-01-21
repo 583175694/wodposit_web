@@ -6,13 +6,14 @@ import {AnyAction} from 'redux'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import './index.less'
-import {BrowserRouter, Route} from "react-router-dom";
-import Home from "../../components/Home";
-import Product from "../../components/Product";
-import New from "../../components/New";
-import List from "../../components/List";
-import About from "../../components/About";
-import ProductDetail from "../../components/ProductDetail";
+import {BrowserRouter, Route} from 'react-router-dom'
+import Home from '../../components/Home'
+import Product from '../../components/Product'
+import New from '../../components/New'
+import About from '../../components/About'
+import NewDetail from '../../components/NewDetail'
+import ProductDetail from '../../components/ProductDetail'
+import ScrollToTop from '../../plugins/scrollToTop' // 用于切换路由时,将页面滚动到最上面
 
 type StateProps = {}
 
@@ -34,16 +35,18 @@ class Index extends React.Component<IProps, State> {
   }
 
   render() {
-    return <div className="index">
+    return <div className='index'>
       <BrowserRouter>
-        <Header/>
-        <Route path="/" exact component={Home}/>
-        <Route path="/product" exact component={Product}/>
-        <Route path="/product/:id" component={ProductDetail}/>
-        <Route path="/new" component={New}/>
-        <Route path="/list" component={List}/>
-        <Route path="/about" component={About}/>
-        <Footer/>
+        <ScrollToTop>
+          <Header/>
+          <Route path='/' exact component={Home}/>
+          <Route path='/product' exact component={Product}/>
+          <Route path='/product/:id' component={ProductDetail}/>
+          <Route path='/new' exact component={New}/>
+          <Route path='/new/:id' component={NewDetail}/>
+          <Route path='/about' component={About}/>
+          <Footer/>
+        </ScrollToTop>
       </BrowserRouter>
     </div>
   }

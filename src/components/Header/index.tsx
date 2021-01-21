@@ -32,24 +32,24 @@ class Header extends React.Component<IProps, State> {
     const menu = (
       <Menu>
         <Menu.Item>
-          <a target="_blank" href="http://www.alipay.com/">
+          <Link to="/product">
             台式机内存
-          </a>
+          </Link>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" href="http://www.taobao.com/">
+          <Link to="/product">
             笔记本内存
-          </a>
+          </Link>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" href="http://www.tmall.com/">
+          <Link to="/product">
             服务器内存
-          </a>
+          </Link>
         </Menu.Item>
         <Menu.Item>
-          <a target="_blank" href="http://www.tmall.com/">
+          <Link to="/product">
             SSD固态硬盘
-          </a>
+          </Link>
         </Menu.Item>
       </Menu>
     );
@@ -67,11 +67,14 @@ class Header extends React.Component<IProps, State> {
           <div className="header">
             <div className="brand">
               <Link to="/">
-                111
+                <div className="icon-logo"/>
               </Link>
             </div>
             <div className="nav">
               <ul>
+                <li>
+                  <Link to="/">首页</Link>
+                </li>
                 <li>
                   <Dropdown overlayClassName="menu-dropdown" overlay={menu} placement="bottomLeft" arrow>
                     <Link to="/product">产品中心</Link>
@@ -80,9 +83,9 @@ class Header extends React.Component<IProps, State> {
                 <li>
                   <Link to="/new">新闻中心</Link>
                 </li>
-                <li>
-                  <Link to="/list">技术测评</Link>
-                </li>
+                {/*<li>*/}
+                {/*  <Link to="/list">技术测评</Link>*/}
+                {/*</li>*/}
                 <li>
                   <Link to="/about">关于我们</Link>
                 </li>
@@ -95,7 +98,7 @@ class Header extends React.Component<IProps, State> {
                     onVisibleChange={this.handleVisibleChange}
                     visible={this.state.visible}
                   >
-                    <div className="search"></div>
+                    <div className="search" />
                   </Dropdown>
                 </li>
               </ul>

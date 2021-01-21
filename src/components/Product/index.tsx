@@ -7,6 +7,10 @@ import { AnyAction } from 'redux'
 import { Image } from "antd"
 import {Link} from 'react-router-dom'
 
+import IMG1 from '../../assets/img_product7.png'
+import IMG2 from '../../assets/img_product6.png'
+import IMG3 from '../../assets/img_product5.png'
+
 type StateProps = {}
 
 type DispatchProps = {}
@@ -24,17 +28,17 @@ interface State {
 
 const newData = [{
   id: 1,
-  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
+  url: IMG1,
   title: 'ECC/REG/服务器',
   subtitle: 'ECC/REG/服务器',
 }, {
   id: 2,
-  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
+  url: IMG2,
   title: 'SSD',
   subtitle: '嵌入式解决方案',
 }, {
   id: 3,
-  url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
+  url: IMG3,
   title: '宽温/工业级',
   subtitle: '系统稳定性高',
 }]
@@ -46,19 +50,19 @@ class Product extends React.Component<IProps, State> {
     this.state = {
       products: [{
         id: 1,
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-1.jpg',
+        url: IMG1,
         title: 'ECC/REG/服务器',
         subtitle: 'ECC/REG/服务器',
         to: ''
       }, {
         id: 2,
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-2.jpg',
+        url: IMG2,
         title: 'SSD',
         subtitle: '嵌入式解决方案',
         to: ''
       }, {
         id: 3,
-        url: 'https://fitness-evaluation-1255704943.cos.ap-guangzhou.myqcloud.com/evaluation/production/flower/banner-3.jpg',
+        url: IMG3,
         title: '宽温/工业级',
         subtitle: '系统稳定性高',
         to: ''
